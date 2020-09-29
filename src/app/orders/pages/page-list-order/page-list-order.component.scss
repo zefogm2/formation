@@ -1,0 +1,19 @@
+@import 'theme';
+.state-cancel {
+  background: yellow;
+}
+
+.state-in-progress {
+  background:red;
+
+  animation:goodColors 15s infinite;
+
+}
+.state-confirm {
+   background:cyan;
+}
+
+@keyframes goodColors {
+  0%   { background-color:yellow}
+  50% { background-color:green }
+}
