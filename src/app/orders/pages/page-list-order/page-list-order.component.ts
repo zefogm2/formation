@@ -9,12 +9,17 @@ import { OrdersService } from '../../services/orders.service';
 })
 export class PageListOrderComponent implements OnInit {
   public orderList: Order[];
+  public tableHeaders:string[];
   constructor(private orderService:OrdersService) { }
 
   ngOnInit(): void {
+    this.tableHeaders= [
+      "Type","Client","Nb. Jours","Tjm HT","Total HT","Total TTC","State"
+    ];
     this.orderService.collection.subscribe(
         (datas) => {
           console.log(datas);
+          if (this.tableHeaders == null) this.tableHeaders=Object.getOwnPropertyNames(datas[0]);
           this.orderList=datas;
 
         },(err) =>{
