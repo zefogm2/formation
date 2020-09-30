@@ -1,0 +1,74 @@
+@import 'theme';
+template-a {
+.table-dark table {
+  background-color: black;
+  color:yellow;
+}
+.table-dark {
+  color:yellow;
+  .state-cancel {
+    background: yellow;
+  }
+  .state-in-progress {
+    animation:goodColors 5s  alternate infinite;
+}
+.state-confirm {
+   background:cyan;
+}
+
+.state-actif {
+  background:red;
+}
+.state-inactif {
+  background:green;
+}
+
+@keyframes goodColors {
+  0%   { background-color:red}
+  50%  { background-color:blue }
+  100% { background-color:green }
+}
+
+.cestlui {
+  text-decoration: underline;
+  background-color: 'green';
+}
+}
+}
+
+template-b {
+  .table-dark table {
+    background-color: black;
+    color:green;
+  }
+  .table-dark {
+    color:yellow;
+    .state-cancel {
+      background: yellow;
+    }
+    .state-in-progress {
+      animation:goodColors 5s  alternate infinite;
+  }
+  .state-confirm {
+     background:cyan;
+  }
+
+  .state-actif {
+    background:red;
+  }
+  .state-inactif {
+    background:green;
+  }
+
+  @keyframes goodColors {
+    0%   { background-color:red}
+    50%  { background-color:blue }
+    100% { background-color:green }
+  }
+
+  .cestlui {
+    text-decoration: underline;
+    background-color: 'green';
+  }
+  }
+  }

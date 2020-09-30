@@ -19,7 +19,6 @@ export class PageListClientComponent implements OnInit {
     this.tableHeaders=["Nom","commentaire","ca","etat"];
     this.route.params.subscribe(params => {
       this.nameSelected = params['id'];
-
    });
 
 

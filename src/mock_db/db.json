@@ -2,7 +2,7 @@
   "orders": [
     {
       "nbJours": 1,
-      "state": "CANCEL",
+      "state": "In Progress",
       "tjmHt": 1200,
       "tva": 20,
       "typePresta": "formation55",
@@ -12,7 +12,7 @@
     },
     {
       "nbJours": 1,
-      "state": "In Progress",
+      "state": "CANCEL",
       "tjmHt": 500,
       "tva": 20,
       "typePresta": "Formation",
@@ -41,7 +41,7 @@
       "comment": "un comment pour client christophe2"
     },
     {
-      "state": "ACTIF",
+      "state": "INACTIF",
       "name": "M2i",
       "id": 2,
       "ca": 120000,
