@@ -11,22 +11,28 @@ const routes: Routes = [
   },
   {
     path:"clients",
-    loadChildren: () =>import('./clients/clients.module').then (module => module.ClientsModule)
+    loadChildren: () =>import('./clients/clients.module').then (module => module.ClientsModule),
+
+
   },
   {
     path:"orders",
     loadChildren: () =>import('./orders/orders.module').then (module => module.OrdersModule)
   },
+
   {
     path:"**",
     loadChildren: () =>import('./page-not-found/page-not-found.module').then (module => module.PageNotFoundModule)
   }
+
+
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
       preloadingStrategy: PreloadAllModules
       //,enableTracing:true
+      //,onSameUrlNavigation:"reload"
   })],
   exports: [RouterModule]
 })

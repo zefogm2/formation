@@ -25,6 +25,7 @@ export class PageListOrderComponent implements OnInit {
     });
   }
   public testButton() {
+
     alert("Click sur le bouton");
 
   }
