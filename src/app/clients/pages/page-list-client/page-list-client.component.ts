@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Client } from 'src/app/shared/models/client';
+import { ActivatedRoute } from '@angular/router';
+import { Client } from 'src/app/core/models/client';
+import { StateClient } from '../../enums/state-client.enum';
 import { ClientsService } from '../../services/clients.service';
 
 @Component({
@@ -9,9 +11,19 @@ import { ClientsService } from '../../services/clients.service';
 })
 export class PageListClientComponent implements OnInit {
   public clientList: Client[];
-  constructor(private clientService: ClientsService) { }
-
+  public states=Object.values(StateClient);
+  constructor(private clientService: ClientsService,private route: ActivatedRoute) { }
+  public tableHeaders;
+  public nameSelected:string = null;
   ngOnInit(): void {
+    this.tableHeaders=["Nom","commentaire","ca","etat"];
+    this.route.params.subscribe(params => {
+      this.nameSelected = params['id'];
+
+   });
+
+
+
     this.clientService.collection.subscribe(
         (datas) => {
              this.clientList=datas;
@@ -23,5 +35,14 @@ export class PageListClientComponent implements OnInit {
         }
     );
   }
+
+  public changeState(item:Client,event):void {
+    this.clientService.changeState(item,event.target.value).subscribe(result=>{
+       item.state=result.state;
+    },err=>{
+        event.target.value=item.state;
+    });
+  }
+
 
 }

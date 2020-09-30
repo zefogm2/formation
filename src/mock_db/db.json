@@ -33,17 +33,24 @@
   ],
   "clients": [
     {
-      "state": "In Progress",
+      "state": "ACTIF",
+      "name": "Christophe2",
       "tva": 20,
       "id": 1,
-      "name": "Christophe2",
       "ca": 12000,
       "comment": "un comment pour client christophe2"
     },
     {
-      "state": "In Progress",
+      "state": "ACTIF",
+      "name": "M2i",
       "id": 2,
-      "name": "Modis",
+      "ca": 120000,
+      "comment": "un comment pour client modis"
+    },
+    {
+      "state": "INACTIF",
+      "id": 2,
+      "name": "nemesys",
       "ca": 120000,
       "comment": "un comment pour client modis"
     }

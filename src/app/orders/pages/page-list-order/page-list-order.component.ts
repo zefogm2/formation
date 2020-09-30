@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Order } from 'src/app/shared/models/order';
+import { Order } from 'src/app/core/models/order';
 import { StateOrder } from '../../enums/state-order.enum';
 import { OrdersService } from '../../services/orders.service';
 
@@ -22,7 +22,10 @@ export class PageListOrderComponent implements OnInit {
         event.target.value=item.state;
     });
   }
+  public testButton() {
+    alert("Click sur le bouton");
 
+  }
   ngOnInit(): void {
 
     this.tableHeaders= [

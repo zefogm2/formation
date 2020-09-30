@@ -1,1 +1,16 @@
-<p>page-list-client works!</p>
+{{clientList | json}}
+
+
+<app-table-light [headers]="tableHeaders" *ngIf="clientList">
+  <tr *ngFor="let client of clientList">
+    <td [ngClass]="client.name==nameSelected?'cestlui':''">{{ client.name }}</td>
+    <td >{{ client.comment | uppercase}}</td>
+    <td>{{ client.ca |currency:"EUR"}}</td>
+    <td appState [state]="client.state"><select (change)="changeState(client,$event)" >
+        <option *ngFor="let state of states" [value]="state" [selected]="state == client.state">
+          {{state}}
+        </option>
+    </select>
+    </td>
+  </tr>
+</app-table-light>
