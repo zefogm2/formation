@@ -12,10 +12,18 @@ import { OrdersService } from '../../services/orders.service';
 })
 export class PageEditOrderComponent implements OnInit {
   public item$:Observable<Order>;
+  public title:string;
+  public subtitle:string;
   constructor(private router:Router,
     private currentRoute:ActivatedRoute,private orderService:OrdersService) { }
 
   ngOnInit(): void {
+    this.currentRoute.data.subscribe(
+      (data)=>{
+        this.title=data.title;
+        this.subtitle=data.subtitle;
+      }
+    )
     this.item$=this.currentRoute.paramMap.pipe(
       switchMap((params: ParamMap)=>{
           return this.orderService.getItemById(params.get("id"));
