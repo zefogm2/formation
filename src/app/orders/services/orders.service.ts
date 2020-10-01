@@ -42,4 +42,9 @@ export class OrdersService {
     return this.http.post<Order>(`${this.urlApi}orders`,item );
   }
 
+  public getItemById(id):Observable<Order> {
+    return this.http.get<Order>(`${this.urlApi}orders/${id}`);
+  }
+
+
 }

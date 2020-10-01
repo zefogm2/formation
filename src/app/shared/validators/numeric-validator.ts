@@ -1,11 +1,11 @@
 import { AbstractControl } from '@angular/forms';
 
 export function NumericValidator(control: AbstractControl) {
- /*
-  if (control.value && !typeof(control.value)==='number') {
+
+  if (control.value  ) {
 
     return {'numeric':true};
   }
 
-  else return null;*/
+  else return null;
 }

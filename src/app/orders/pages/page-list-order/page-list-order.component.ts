@@ -32,7 +32,7 @@ export class PageListOrderComponent implements OnInit {
   ngOnInit(): void {
 
     this.tableHeaders= [
-      "Type","Client","Nb. Jours","Tjm HT","Total HT","Total TTC","State"
+      "Type","Client","Nb. Jours","Tjm HT","Total HT","Total TTC","State","Actions"
     ];
 
     /*this.orderService.collection.subscribe(

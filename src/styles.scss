@@ -2,12 +2,20 @@
 
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
-body {
+body div {
 
-  animation:hue-anim 5s  alternate infinite;
+  perspective: 800px;
+  //transform:rotate3d(0,1,0,60deg);
+  animation:rotate-anim 15s  alternate ;
+  //animation:hue-anim 2s  alternate infinite;
 }
 
 @keyframes hue-anim {
   0%   { filter: hue-rotate(0deg);}
   100% { filter: hue-rotate(100deg); }
+}
+
+@keyframes rotate-anim {
+  0%   { transform:rotate3d(0,1,1,0deg);}
+  100% { transform:rotate3d(0,1,1,360deg); }
 }
