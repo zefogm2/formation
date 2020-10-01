@@ -30,7 +30,7 @@ export class FormOrderComponent implements OnInit {
       client:[o.client,Validators.required],
       comment:[o.comment],
       id:[o.id]
-    },{Validators:Validators.compose([DependencyValidator("client",["tjmHt","nbJours"])])});
+    },{validators:Validators.compose([DependencyValidator("client",["tjmHt","nbJours"])])});
   }
 
 }

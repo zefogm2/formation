@@ -2,3 +2,11 @@
 
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
+body {
+  animation:hue-anim 5s  alternate infinite;
+}
+
+@keyframes hue-anim {
+  0%   { filter: hue-rotate(0deg);}
+  100% { filter: hue-rotate(100deg); }
+}
