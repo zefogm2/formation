@@ -12,7 +12,7 @@ export class BtnComponent implements OnInit {
   @Input() route: string;
   @Input() action:boolean;
   @Output() clicked: EventEmitter<any>=new EventEmitter();
-  @Input() type:string = "button";
+  @Input() typeButton:string = "button";
   constructor() { }
 
   ngOnInit(): void {
