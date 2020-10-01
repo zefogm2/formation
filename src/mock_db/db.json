@@ -123,6 +123,14 @@
       "name": "nemesys",
       "ca": 120000,
       "comment": "un comment pour client modis"
+    },
+    {
+      "ca": "590000",
+      "comment": "Voilà",
+      "tva": "1",
+      "state": "ACTIF",
+      "name": "Rémy",
+      "id": 3
     }
   ]
 }

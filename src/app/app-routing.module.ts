@@ -5,10 +5,7 @@ import { PageLoginComponent } from './login/pages/page-login/page-login.componen
 const routes: Routes = [
   { path:"login" , component: PageLoginComponent},
   { path:"" , redirectTo:"/login",pathMatch:"full"},
-  {
-    path:"clients/:id",
-    loadChildren: () =>import('./clients/clients.module').then (module => module.ClientsModule)
-  },
+
   {
     path:"clients",
     loadChildren: () =>import('./clients/clients.module').then (module => module.ClientsModule),
