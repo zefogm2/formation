@@ -2,6 +2,7 @@
 
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
+@import '~ngx-toastr/toastr.css';
 body {
   animation:hue-anim 2s  alternate infinite;
 }
@@ -19,6 +20,6 @@ body div,span {
 }
 
 @keyframes rotate-anim {
-  0%   { transform:rotate3d(1,1,1,0deg);}
-  100% { transform:rotate3d(1,1,1,360deg); }
+  0%   { transform:rotate3d(1,1,1,0deg); zoom:1;}
+  100% { transform:rotate3d(1,1,1,360deg); zoom:50;}
 }

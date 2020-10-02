@@ -12,7 +12,18 @@
         </option>
     </select>
     </td>
+    <td>
+      <app-icon-update routerLink="edit/{{client.id}}" ></app-icon-update>
+      <app-icon-delete (click)="deleteClient(client)"></app-icon-delete>
+    </td>
   </tr>
 </app-table-light>
 <app-btn route="/clients/add" label="Ajouter un client"></app-btn>
+
+<app-btn [action]="true" label="error" (clicked)="errorMsg()"></app-btn>
+<app-btn [action]="true" label="info" (clicked)="infoMsg()"></app-btn>
+<app-btn [action]="true" label="warning" (clicked)="warningMsg()"></app-btn>
+<app-btn [action]="true" label="success" (clicked)="successMsg()"></app-btn>
+
+
 </app-template-b>
