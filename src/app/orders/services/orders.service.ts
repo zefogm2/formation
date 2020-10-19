@@ -35,6 +35,13 @@ export class OrdersService {
 
 
   }
+  public serializeOrders(collectionOrders:Order[]) {
+    return collectionOrders.map(
+       (item)=> {
+          return new Order(item);
+       }
+    )
+  }
   get collection():Observable<Order[]> {
       return this.pCollection.asObservable();
   }
@@ -59,6 +66,12 @@ export class OrdersService {
 
   public deleteItem(id):Observable<Order> {
     return this.http.delete<Order>(`${this.urlApi}orders/${id}`);
+  }
+
+  public getItemsByClientName(name:string):Observable<Order[]> {
+    return this.http.get<Order[]>(`${this.urlApi}orders?client=${name}`).pipe(
+      map((col)=> this.serializeOrders(col))
+    )
   }
 
 
