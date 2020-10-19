@@ -26,6 +26,12 @@ body div,span {
 }
 */
 
-/*body .modal-dialog {
-  filter:drop-shadow(15px 10px 4px #4444dd)
+/*body div {
+  animation:shadow-anim 2s  alternate infinite;
+
 }*/
+@keyframes shadow-anim {
+  0%   { filter:drop-shadow(0px 0px 0px #4444dd)}
+  100% { filter:drop-shadow(5px 5px 4px #4444dd)}
+}
+
