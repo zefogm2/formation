@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer2, TemplateRef, ViewChild } from '@angular/core';
+import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { Observable, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { Order } from 'src/app/core/models/order';
@@ -16,7 +17,15 @@ export class PageListOrderComponent implements OnInit {
   public tableHeaders:string[];
   public states=Object.values(StateOrder);
   private destroy$:Subject<Boolean>=new Subject();
-  constructor(private orderService:OrdersService) { }
+  @ViewChild('confirmDeleteModal') private confirmDeleteModal:TemplateRef<any>;
+  private currentActiveModal:NgbModalRef;
+  public modalValues:Order;
+
+  constructor(
+    private orderService:OrdersService,
+    private renderer:Renderer2,
+    private modalService:NgbModal
+    ) { }
 
 
   public changeState(item:Order,event):void {
@@ -55,9 +64,28 @@ export class PageListOrderComponent implements OnInit {
   public deleteOrder(item:Order) {
     this.orderService.deleteItem(item).subscribe(
         (result)=> {
+          this.dismissModal();
             this.orderService.refresh$.next(true);
         }
     );
   }
+
+  @ViewChild('abcd',{static:true}) private abcd:ElementRef;
+  public onClick() {
+    const li=this.renderer.createElement('li');
+    const text=this.renderer.createText('Cliquer pour ajouter');
+    this.renderer.appendChild(li,text);
+    this.renderer.appendChild(this.abcd.nativeElement,li);
+  }
+
+  public openDeleteModal(values:any) {
+    this.modalValues=values;
+    this.currentActiveModal=this.modalService.open(this.confirmDeleteModal);
+  }
+  public dismissModal() {
+    this.currentActiveModal.dismiss();
+  }
+
+
 
 }

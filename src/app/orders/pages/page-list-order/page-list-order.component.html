@@ -15,7 +15,7 @@
       </td>
       <td>
         <app-icon-update routerLink="edit/{{order.id}}" ></app-icon-update>
-        <app-icon-delete (click)="deleteOrder(order.id)"></app-icon-delete>
+        <app-icon-delete (click)="openDeleteModal(order.id)"></app-icon-delete>
     </td>
     </tr>
   </app-table-dark>
@@ -42,4 +42,18 @@
   <h3>Sub SubTitle</h3>
   <p>Ceci est un texte dans un paragraphe</p>
 </app-text>
+<ul (click)="onClick()" #abcd>
+  <li>Cliquer pour ajouter li</li>
+</ul>
+
+<ng-template #confirmDeleteModal let-modal>
+  <app-modal title="Confirmation de suppression" (dismissed)="dismissModal()">
+      <div class="modal-body">
+        Êtes vous sur de vouloir supprimer cet élément ?
+      </div>
+      <div class="modal-footer">
+        <app-btn typeButton="button" (clicked)="deleteOrder(modalValues)" label="Valider" [action]="true"></app-btn>
+      </div>
+  </app-modal>
+</ng-template>
 
