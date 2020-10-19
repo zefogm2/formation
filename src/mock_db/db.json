@@ -26,7 +26,7 @@
       "tva": "1",
       "state": "CANCEL",
       "typePresta": "MYTYPE",
-      "client": "nemesys",
+      "client": "M2i",
       "comment": "et hop",
       "id": 5
     },
@@ -44,7 +44,7 @@
   "orders2": [
     {
       "tjmHt": "15612358",
-      "nbJours": "99",
+      "nbJours": "99999",
       "tva": "1",
       "state": "Confirm",
       "typePresta": "MYTYPE",
